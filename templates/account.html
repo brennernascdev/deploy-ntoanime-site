@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block style %}
+    div.account {
+        max-width: 800px;
+        margin: auto;
+        background-color: rgb(255,210,150);
+        padding: 8px;
+    }
+    div.create {
+        display: block;
+        max-width: 800px;
+        margin: auto;
+        background-color: white;
+        border: 2px solid rgb(255,200,0);
+        padding: 8px;
+    }
+    div.create fieldset {
+        border: 0px;
+    }
+    div.characters {
+        display: block;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 4px;
+        background-color: white;
+        border: 2px solid rgb(255,200,0);
+        padding: 8px;
+    }
+    table, th, td {
+        border: 2px solid rgb(255,200,0);
+        border-collapse: collapse;
+    }
+    th, td {
+        background-color: white;
+    }
+    th {
+        background-color: rgb(255,210,150);
+    }
+{% endblock %}
+
+{% block content %}
+    <div class="account">
+        <h1>Bem-vindo a sua conta!</h1>
+        <div class="create">
+            <h2>Novo Personagem:</h2>
+            <form action="/account/?subtopic=createcharacter" method="post">
+                <input type="text" name="charName" id="charName" placeholder="Nickname">
+                <fieldset id="radioGroup">
+                    <label>Naruto</label>
+                    <input type="radio" name="radVoc" id="radNaruto" value="Naruto" checked>
+                    <label>Sasuke</label>
+                    <input type="radio" name="radVoc" id="radSasuke" value="Sasuke">
+                    <label>Sakura</label>
+                    <input type="radio" name="radVoc" id="radSakura" value="Sakura">
+                </fieldset>
+                <input type="submit" value="Criar Personagem">
+            </form>
+        </div>
+        <div class="characters">
+            <h2>Characters</h2>
+            <table style="width: 100%;">
+                <tr>
+                    <th>Character Nickname</th>
+                    <th>Level</th>
+                </tr>
+                {% for char in characters %}
+                    <tr>
+                        <td>{{char[0]}}</td>
+                        <td>{{char[1]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script>
+        function logout(){
+               window.location.href="/account/?subtopic=logout";
+        }
+
+    </script>
+{% endblock %}

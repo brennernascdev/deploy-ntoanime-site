@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Create Account - {%endblock%}
+{% block content %}
+    <div>
+        <h1>Create Character</h1>
+        <form action="/account/?subtopic=createcharacter" method="post">
+            <input type="text" name="usuario" id="usuario" placeholder="Character Name">
+            <input type="submit" value="Criar">
+        </form>
+    </div>
+    <script>
+    </script>
+{% endblock %}

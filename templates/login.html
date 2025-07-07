@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Login - {%endblock%}
+{% block content %}
+    <div class="login">
+        <h2>Login</h2>
+        <form action="/account/" method="post">
+            <input type="text" name="usuario" id="usuario" placeholder="Usuário" required>
+            <input type="password" name="senha" id="senha" placeholder="Senha" required>
+            <button type="submit" value="Acessar">Acessar</button>
+        </form>
+        <button onclick="window.location.href='/account/?subtopic=createaccount'"> Create Account </button>
+    </div>
+    <script>
+    </script>
+{% endblock %}
