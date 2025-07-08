@@ -3,7 +3,8 @@ import socket
 
 app = Flask(__name__)
 
-serverIp, serverPort = ('170.84.158.7', 7171)
+serverIp = '170.84.158.7'
+serverPort = 7171
 
 def getServerState():
     global serverIp, serverPort
@@ -20,4 +21,4 @@ def homepage():
     return render_template("index.html", online=serverOnline)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8081)
+    app.run(host="0.0.0.0")
