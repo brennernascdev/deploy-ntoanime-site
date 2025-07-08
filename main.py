@@ -12,13 +12,14 @@ def getServerState():
     sock.settimeout(0.01) #Timeout in case of port not open
     result = sock.connect_ex((f'{serverIp}',serverPort))
     sock.close()
-    print(result)
+    
     return (result == 0 and 'online' or 'offline')
 
 @app.route('/')
 def homepage():
     global serverOnline
     serverOnline = getServerState()
+    print(serverOnline)
     return render_template("index.html", online=serverOnline)
 
 if __name__ == "__main__":
