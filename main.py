@@ -27,7 +27,7 @@ def homepage():
     global serverOnline
     serverOnline = getServerState()
     print(serverOnline)
-    return render_template("index.html", online=serverOnline)
+    return render_template("index.html", online=serverOnline, download=download_link)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
