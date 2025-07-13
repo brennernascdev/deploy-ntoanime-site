@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 serverIp = '170.84.158.7'
 serverPort = 7171
+download_link = "https://drive.google.com/file/d/1oVkdskoQzwdHk6p4cGU2rkCadf_Ms6oy/view?usp=drive_link"
 
 def getServerState():
     global serverIp, serverPort
