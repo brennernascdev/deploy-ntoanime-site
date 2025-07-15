@@ -10,7 +10,7 @@ download_link = "https://drive.google.com/file/d/1oVkdskoQzwdHk6p4cGU2rkCadf_Ms6
 def getServerState():
     global serverIp, serverPort
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.settimeout(0.01) #Timeout in case of port not open
+    sock.settimeout(2) #Timeout in case of port not open
     result = sock.connect_ex((f'{serverIp}',serverPort))
     
     sock.close()
