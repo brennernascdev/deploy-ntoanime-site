@@ -11,15 +11,10 @@ def getServerState():
     global serverIp, serverPort
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.settimeout(0.01) #Timeout in case of port not open
-    result = 'offline'
-    try:
-        sock.connect((serverIp,serverPort))
-        result = 'online'
-    except Exception:
-        result = 'offline'
+    result = sock.connect_ex((f'{serverIp}',serverPort))
     
     sock.close()
-    print(result)
+    result = (result == 0 and "online" or "offline")
     return result
 
 @app.route('/')
