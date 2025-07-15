@@ -3,7 +3,7 @@ import socket
 
 app = Flask(__name__)
 
-serverIp = '170.84.158.7'
+serverIp = '191.252.223.223'
 serverPort = 7171
 download_link = "https://drive.google.com/file/d/1oVkdskoQzwdHk6p4cGU2rkCadf_Ms6oy/view?usp=drive_link"
 
