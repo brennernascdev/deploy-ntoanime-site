@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTO Anime</title>
+    <style>
+        @font-face {
+            font-family: 'Bebas';
+            src: url("{{url_for('static', filename='BebasNeue-Regular.ttf')}}");
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(43, 49, 59);
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        header, main, footer {
+            font-family: 'Bebas';
+            background-color: rgb(61, 131, 177);
+            margin: 8px auto 8px auto;
+            max-width: 600px;
+            padding: 12px;
+            font-size: 20px;
+            box-shadow: 0px 4px orange;
+            border-radius: 10px;
+        }
+
+        header {
+            background-image: linear-gradient(to bottom right, rgb(206, 50, 3), yellow);
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        header h2 {
+            font-size: 20px;
+        }
+
+        main {
+            min-height: 480px;
+        }
+
+        a {
+            color: orange;
+        }
+
+        #download {
+            margin-top: 30%;
+        }
+
+        #serverstate {
+            {% if online == 'online' %}
+                color: greenyellow;
+            {% else %}
+                color: darkred;
+            {% endif %}
+        }
+
+        .div_buttons {
+            display: flex;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .download_button {
+            font-family: 'Bebas';
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px auto 10px auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>NTO Anime</h1>
+        <h2>beta</h2>
+    </header>
+    <main>
+        <p id="serverstate">server {{ online }}!</p>
+        <p>Bem-vindo ao site do jogo.</p>
+        <div class="div_buttons">
+            <button class="download_button" onclick="window.location.href='{{links['otc']}}'">DOWNLOAD OTCient Version</button>
+            <button class="download_button" onclick="window.location.href='{{links['oldc']}}'">DOWNLOAD Old Client Version</button>
+        </div>
+    </main>
+    <footer>
+        <p>Projeto sem fins lucrativos</p>
+        <p>Desenvolvido por Brenner Nascimento.</p>
+        <p>Instagram: <a href="https://www.instagram.com/ntoanime.staff/">@ntoanime.staff</a></p>
+    </footer>
+</body>
+
+</html>

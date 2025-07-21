@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Create Account - {%endblock%}
+{% block style %}
+    form {
+    }
+    form input {
+        display: block;
+        text-align: center;
+        margin: 8px auto;
+        border-radius: 8px;
+        border: 0;
+        padding: 8px;
+    }
+{% endblock %}
+{% block content %}
+    <div class="createaccount">
+        <h1>Create Account</h1>
+        <form action="/account/?subtopic=createaccount" method="post">
+            <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+            <input type="password" name="senha" id="senha" placeholder="Senha">
+            <button type="submit">Criar</button>
+        </form>
+    </div>
+    <script>
+    </script>
+{% endblock %}
