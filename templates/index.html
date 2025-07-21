@@ -63,6 +63,19 @@
                 color: darkred;
             {% endif %}
         }
+
+        .div_buttons {
+            display: flex;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .download_button {
+            font-family: 'Bebas';
+            font-size: 20px;
+            padding: 20px;
+            margin: 10px auto 10px auto;
+        }
         
     </style>
 </head>
@@ -75,8 +88,10 @@
     <main>
         <p id="serverstate">server {{ online }}!</p>
         <p>Bem-vindo ao site do jogo.</p>
-        <p id="download">Clique <a href="{{ links['otc'] }}">aqui</a>
-            para baixar a versão do jogo.</p>
+        <div class="div_buttons">
+            <button class="download_button" onclick="window.location.href='{{links['otc']}}'">DOWNLOAD OTCient Version</button>
+            <button class="download_button" onclick="window.location.href='{{links['oldc']}}'">DOWNLOAD Old Client Version</button>
+        </div>
     </main>
     <footer>
         <p>Projeto sem fins lucrativos</p>
